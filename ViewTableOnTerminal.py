@@ -12,9 +12,9 @@ def ViewTableOnTerminal(tableName):
             database=mc.database,
             auth_plugin=mc.auth_plugin
         )
-        sql_select_Query = "SELECT * FROM {}".format(tableName)
+        sql_select_statement = "SELECT * FROM {}".format(tableName)
         cursor = connection.cursor()
-        cursor.execute(sql_select_Query)
+        cursor.execute(sql_select_statement)
         records = cursor.fetchall()
         # print("Total number of rows in Laptop is: ", cursor.rowcount)
 
