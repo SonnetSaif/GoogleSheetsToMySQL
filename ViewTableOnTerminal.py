@@ -30,6 +30,7 @@ def ViewTableOnTerminal(tableName):
 
     except Error as e:
         print("Error reading data from MySQL table", e)
+
     finally:
         if connection.is_connected():
             cursor.close()

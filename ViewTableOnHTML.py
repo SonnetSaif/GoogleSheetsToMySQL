@@ -21,8 +21,9 @@ def ViewTableOnHTML(tableName):
     temp = []
 
     tbl = "<tr><td>NBR DC/DR Attendance Register</td></tr>" \
-          "<tr><td>Date</td><td>Status</td><td>Tahsinur Refat " \
-          "Emon</td><td>Niger</td><td>Nishu</td><td>Asifuzzaman</td><td>Sanjoy</td></tr> "
+          "<tr><td>Date</td><td>Status</td><td>Tahsinur Refat Emon</td>" \
+          "<td>Niger</td><td>Nishu</td><td>Asifuzzaman</td><td>Sanjoy</td></tr> "
+
     temp.append(tbl)
 
     for row in result:
