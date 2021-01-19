@@ -16,17 +16,13 @@ def ViewTableOnTerminal(tableName):
         cursor = connection.cursor()
         cursor.execute(sql_select_statement)
         records = cursor.fetchall()
-        # print("Total number of rows in Laptop is: ", cursor.rowcount)
 
-        print("\nPrinting each record\n")
+        # print("\tDate\t\t\tStatus\tTahsinur\tNiger\tNishu\tAsifuzzaman\tSanjoy")
+        print("\n")
         for row in records:
-            print("Date : ", row[0])
-            print("Status : ", row[1])
-            print("Tahsinur  : ", row[2])
-            print("Niger  : ", row[3])
-            print("Nishu  : ", row[4])
-            print("Asifuzzaman  : ", row[5])
-            print("Sanjoy  : ", row[6], "\n")
+            print(row[0] + " " + row[1] + "\t" + row[2] + "\t" + row[3] + "\t" + row[4] + "\t" + row[5] + "\t" + row[
+                6])
+            print("\n")
 
     except Error as e:
         print("Error reading data from MySQL table", e)
