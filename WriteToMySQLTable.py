@@ -1,6 +1,5 @@
-import MySQLCredentials as mc
 import mysql.connector
-from mysql.connector import Error
+import MySQLCredentials as mc
 
 
 def WriteToMySQLTable(sql_data, tableName):

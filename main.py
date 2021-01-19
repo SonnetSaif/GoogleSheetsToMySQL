@@ -1,15 +1,11 @@
 # importing libraries
-import webbrowser
 import gspread
-import MySQLCredentials as mc
-import mysql.connector
-from mysql.connector import Error
 from oauth2client.service_account import ServiceAccountCredentials
 
+import ViewTableOnHTML
+import ViewTableOnTerminal
 # importing python files as modules
 import WriteToMySQLTable
-import ViewTableOnTerminal
-import ViewTableOnHTML
 
 # initialize variables for gspread
 scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
@@ -23,11 +19,9 @@ def GetSpreadsheetData(sheetName, worksheetIndex):
     return sheet.get_all_values()[1:]
 
 
-# data_temp = []
-# for i in range(20):
-#   data_temp[i] = GetSpreadsheetData('Copy of sample__AttendanceLog__2016', i)
-
 # vertical datasets
+# just uncomment the line according to the required worksheet of the month
+
 # data_march16_1 = GetSpreadsheetData('Copy of sample__AttendanceLog__2016', 0)
 # data_april16_1  = GetSpreadsheetData('Copy of sample__AttendanceLog__2016', 1)
 # data_may16_1  = GetSpreadsheetData('Copy of sample__AttendanceLog__2016', 2)
@@ -39,7 +33,10 @@ def GetSpreadsheetData(sheetName, worksheetIndex):
 data_november16_1 = GetSpreadsheetData('Copy of sample__AttendanceLog__2016', 8)
 # data_december16_1  = GetSpreadsheetData('Copy of sample__AttendanceLog__2016', 9)
 
+
 # horizontal datasets
+# just uncomment the line according to the required worksheet of the month
+
 # data_march16_2  = GetSpreadsheetData('Copy of sample__AttendanceLog__2016', 10)
 # data_april16_2  = GetSpreadsheetData('Copy of sample__AttendanceLog__2016', 11)
 # data_may16_2  = GetSpreadsheetData('Copy of sample__AttendanceLog__2016', 12)
@@ -51,8 +48,6 @@ data_november16_1 = GetSpreadsheetData('Copy of sample__AttendanceLog__2016', 8)
 # data_november16_2  = GetSpreadsheetData('Copy of sample__AttendanceLog__2016', 18)
 # data_december16_2  = GetSpreadsheetData('Copy of sample__AttendanceLog__2016', 19)
 
-# print(data_march16_1[7])
-# print(len(data_march16_1))
 
 WriteToMySQLTable.WriteToMySQLTable(data_november16_1, 'MyData_november16_1')
 
